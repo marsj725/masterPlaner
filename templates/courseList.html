@@ -1,0 +1,7 @@
+<div class="col-sm-4 well well-sm"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;Favorite courses
+	<div class="thumbnail fixedColor" ng-repeat="item in list1Filtered | limitTo:6" data-drop="true" ng-model='list1Filtered' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list1Filtered])'}"  jqyoui-droppable="{index: {{$index}}}">
+		<div class="btn-draggable btn btn-info" data-drag="{{true}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1Filtered" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}" ng-hide="!item.courseName_sv">
+			<span class="pull-left">{{item.courseName_sv | limitTo:32}}</span><span class="pull-right"><kbd style="cursor:hand" class="hand">{{item.period | uppercase}}</kbd> <kbd class="hand">{{item.block | uppercase}}</kbd> <kbd ng-click="addInfo(item)" class="hand" ><span class="glyphicon glyphicon-info-sign"></span></kbd></span>&nbsp;
+		</div>
+	</div>
+</div>

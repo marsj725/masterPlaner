@@ -1,0 +1,66 @@
+.thumbnail { 
+
+	min-height: 40px;
+	display:block;
+	margin-bottom: 0;
+}
+.btn-droppable { 
+	min-width: 240px; 
+	min-height: 50px;
+	padding-left: 4px; 
+	padding-right: 4px; 
+	border:2px solid orange;
+	margin: 2px;
+	display:block;
+}
+.btn-draggable { 
+	display:block;
+	margin: 1px;
+}
+.navbar {
+	margin-bottom:0;
+}
+.jumbotron {
+	padding: 0.1em;
+	margin-bottom:0;
+	margin-top: 0;
+	font-size: 2em;
+}
+.separator{
+	margin-bottom: 10px;
+}
+.alert{
+	margin-bottom: 0;
+}
+.rightObject{
+	float: right;
+}
+.button-padding{
+	margin-left: 3px;
+	margin-right: 3px;
+
+}
+.alert p .btn {
+    display:inline;
+}
+.list-group{
+	margin-bottom: 0;
+}
+.panel{
+	margin-bottom: 1px;
+}
+.hand{
+	cursor: hand;
+}
+.fixedColor{
+	background-color: #eee;
+		padding-top: 2px;
+}
+.vcontainer {
+   min-height: 10em;
+   display: table-cell;
+   vertical-align: middle;
+}
+.morePadding{
+	margin-bottom: 3px;
+}

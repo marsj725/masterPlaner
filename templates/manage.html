@@ -1,0 +1,118 @@
+<div ng-include src="'static/templates/menu.html'"></div>
+<div ng-include src="'static/templates/information.html'"></div>
+
+<div class="container">
+	<div class="row" style="vertical-align:top;">
+		<div class="container well col-md-3  well-sm">
+			<div class="list-group">
+				<a href="#" class="list-group-item active">
+					<div class="table-responsive">
+						<table class="table table-condensed">
+							
+							<tbody>
+							<tr style="border-top:0px;">
+								<td style="border-top:0px;"><h4 class="list-group-item-heading">Credits</h4></td>
+								<td style="border-top:0px;"><kbd>G1</kbd></td>
+								<td style="border-top:0px;"><kbd>G2</kbd></td>
+								<td style="border-top:0px;"><kbd>A</kbd></td>
+								<td style="border-top:0px;"><kbd>Total</kbd></td>
+							</tr>
+							<tr>
+								<td>Planed</td>
+								<td>{{credits.g1}}</td>
+								<td>{{credits.g2}}</td>
+								<td>{{credits.advanced}}</td>
+								<td>{{credits.g1+credits.g2+credits.advanced}}</td>
+							</tr>
+							<tr>
+								<td>Required</td>
+								<td>{{creditsReq.g1}}</td>
+								<td>{{creditsReq.g2}}</td>
+								<td>{{creditsReq.advanced}}</td>
+								<td>{{creditsReq.g1 + creditsReq.g2 + creditsReq.advanced | abs}}</td>
+							</tr>
+							<tr>
+								<td>Missing</td>
+								<td>{{credits.g1 - creditsReq.g1 | abs}}</td>
+								<td>{{credits.g2 - creditsReq.g2 | abs}}</td>
+								<td>{{credits.advanced - creditsReq.advanced | abs}}</td>
+								<td>{{credits.g1 - creditsReq.g1 + credits.g2 - creditsReq.g2 + credits.advanced - creditsReq.advanced | abs}}</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</a>
+			</div><br>
+			<div class="list-group">
+				<a href="#" class="list-group-item active">
+					<h4 class="list-group-item-heading">Recommended Courses</h4>
+					<p ng-repeat="course in required" class="list-group-item-text morePadding"><span class="glyphicon glyphicon-star" aria-hidden="true">&nbsp;</span>{{course.name}}<kbd class="pull-right">{{course.code}}</kbd></p>
+					<p ng-repeat="course in recommended" class="list-group-item-text morePadding"><span class="glyphicon glyphicon-star-empty" aria-hidden="true">&nbsp;</span>{{course.name}}<kbd class="pull-right">{{course.code}}</kbd></p>
+					<p ng-repeat="course in selected" class="list-group-item-text morePadding"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true">&nbsp;</span>{{course.name}}<kbd class="pull-right">{{course.code}}</kbd></p>
+
+				</a>
+			</div>
+		</div>
+		<div class="row well container col-md-8 pull-right">
+				<form class="form-inline ">
+					<div class="form-group">
+						<label for="sel1">Select Period:</label>
+						<select class="form-control" id="sel1" ng-model="sel1">
+							<option>HT</option>
+							<option>VT</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="sel1">Select Year:</label>
+						<select class="form-control" id="sel2" ng-model="sel2">
+							<option>2011</option>
+							<option>2012</option>
+							<option>2013</option>
+							<option>2014</option>
+							<option>2015</option>
+							<option>2016</option>
+							<option>2017</option>
+							<option>2018</option>
+							<option>2019</option>
+							<option>2020</option>
+							<option>2021</option>
+							<option>2022</option>
+							<option>2023</option>
+						</select>
+					</div>
+					<button ui-sref="planer({period:sel1,year:sel2})" type="submit" class="btn btn-success pull-right">Create new period plan</button>
+				</form>
+		</div>
+		<div class="row container well col-md-8 pull-right" ng-repeat="item in list.plans">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="btn-group" role="group" aria-label="...">
+						<div class="btn btn-info" ui-sref="planer({planId:item.id,period:item.period,year:item.year})">Edit plan</div>&nbsp;
+							<button type="button" class="btn btn-default" aria-label="Left Align">
+							<span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print
+							</button>&nbsp;<button type="button" ng-click="removePlan(item)" class="btn btn-danger" aria-label="Left Align">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+							</button><br><br>
+						</div>
+					&nbsp;<kbd class="hand">{{item.created | uppercase}}</kbd>&nbsp;<kbd class="hand">{{"Year:" + item.year | uppercase}}</kbd>&nbsp;<kbd class="hand">{{"Term:" + item.period | uppercase}}</kbd>
+				</div>
+				<div class="col-md-4">
+					<div class="list-group">
+					  <a href="#" class="list-group-item active">
+					    <h4 class="list-group-item-heading">P1</h4>
+						<p class="list-group-item-text" ng-repeat="course in item.courses | filter:{'period':1}:true">{{course.course}}</p>
+					  </a>
+					</div>
+				</div>																
+				<div class="col-md-4">
+					<div class="list-group">
+							<a href="#" class="list-group-item active">
+							<h4 class="list-group-item-heading">P2</h4>
+							<p class="list-group-item-text" ng-repeat="course in item.courses | filter:{'period':2}:true">{{course.course}}</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

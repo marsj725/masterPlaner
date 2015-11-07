@@ -1,0 +1,73 @@
+<div ng-include src="'static/templates/menu.html'"></div>
+<div ng-include src="'static/templates/information.html'"></div>
+
+<div class="container">
+	<div class="col-sm-12">
+		<div class="well well-sm "> 
+			<input ng-model="course" ng-change="searchResult()" type="text" class="form-control" placeholder="Course name / code / anything" value=""><br>
+			<div class="form-inline">
+				<div class="form-group">
+					<label for="sel1">Select Institution:</label>
+					<select ng-model="institution" ng-change="searchResult()" class="form-control" id="sel1">
+						<option></option>
+						<option>MAI</option>
+						<option>IDA</option>
+						<option>IFY</option>
+						<option>tata</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="sel1">Select Block:</label>
+					<select ng-model="block" ng-change="searchResult()" class="form-control" id="sel1">
+						<option></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="sel1">Select Period:</label>
+					<select ng-model="period" ng-change="searchResult()" class="form-control" id="sel1">
+						<option></option>
+						<option>HT1</option>
+						<option>HT2</option>
+						<option>VT1</option>
+						<option>VT2</option>
+					</select>
+				</div>
+				<!--<div class="checkbox"><br>&nbsp;
+					<label>
+						<input type="checkbox" value="">&nbsp;Exam
+					</label>&nbsp;
+					<label>
+						<input type="checkbox" value="">&nbsp;Home-Exam
+					</label>&nbsp;
+					<label>
+						<input type="checkbox" value="">&nbsp;Laboration
+					</label>&nbsp;
+					<label>
+						<input type="checkbox" value="">&nbsp;Written-stuff
+					</label>				
+				</div>-->
+			</div>
+		</div>
+		<div class="well well-sm col-sm-12">
+			<div class="form-inline" ng-repeat="courses in listFiltered">
+				<div class="row col-sm-12">
+					<div class="col-sm-7" data-drop="true" ng-model='list1Filtered' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list1Filtered])'}"  jqyoui-droppable="{index: {{$index}}}">
+						<div style="height:34px;"class="btn-draggable btn btn-info" data-drag="{{true}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1Filtered" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
+							<div class="col-sm-3 pull-left"><kbd>{{courses.courseCode}}</kbd></div>
+							<div class="col-sm-9">{{courses.courseName_sv}}</div>
+						</div>
+					</div>
+					<div class="well well-sm col-sm-5">
+						<kbd>Institution</kbd>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<course-List ng-repeat="course in list"></course-List>-->
+
+</div>

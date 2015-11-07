@@ -1,0 +1,68 @@
+[{
+	"id":0,
+	"courseCode":"TATA41",
+	"courseName_sv":"En variabel analys 1",
+	"courseName_en":"One variable calculus 1",
+	"institution":"mai",
+	"period":"VT1",
+	"block":"b1",
+	"level":"G1",
+	"exam":true,
+	"credits":6,
+	"style":"btn-droppable"
+},{
+	"id":1,
+	"courseCode":"TATA42",
+	"courseName_sv":"En variabel analys 2",
+	"courseName_en":"One variable calculus 2",
+	"institution":"mai",
+	"period":"VT2",
+	"block":"b1",
+	"level":"G1",
+	"credits":6,
+	"style":"btn-droppable"
+},{
+	"id":2,
+	"courseCode":"TATA24",
+	"courseName_sv":"Linjär Algebra",
+	"courseName_en":"Linear Algebra",
+	"institution":"mai",
+	"period":"HT1",
+	"block":"b3",
+	"level":"G1",
+	"credits":8,
+	"style":"btn-droppable"
+},{
+	"id":3,
+	"courseCode":"TDDD27",
+	"courseName_sv":"Avancerad Webbprogrammering",
+	"courseName_en":"Advanced Webprograming",
+	"institution":"ida",
+	"period":"HT1",
+	"block":"b2",
+	"level":"A",
+	"credits":6,
+	"style":"btn-droppable"
+},{
+	"id":4,
+	"courseCode":"TDDD29",
+	"courseName_sv":"IT Projekt ledning",
+	"courseName_en":"It-Project management",
+	"institution":"ida",
+	"period":"HT1",
+	"block":"b2",
+	"level":"A",
+	"credits":6,
+	"style":"btn-droppable"
+},{
+	"id":5,
+	"courseCode":"TDDD16",
+	"courseName_sv":"Mumbojumbo",
+	"courseName_en":"It-Project management",
+	"institution":"ida",
+	"period":"HT1",
+	"block":"b2",
+	"level":"A",
+	"credits":6,
+	"style":"btn-droppable"
+}]

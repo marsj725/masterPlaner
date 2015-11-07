@@ -1,0 +1,20 @@
+{
+	"Requirements":{
+		"profile":"Secure Systems",
+		"requiredCourses":[
+			{"name":"Linear Algebra","code":"tata24","type":"A","credits":6},
+			{"name":"Encryption","code":"tddd44","type":"G1","credits":6},
+			{"name":"One Variable Calculus 1","code":"tata41","type":"G2","credits":6}
+
+		],
+		"recommendedCourses":[
+			{"name":"One Variable Calculus 2","code":"tata41"},
+			{"name":"One Variable Calculus 3","code":"tata43"}
+		],
+		"credits":[
+			{"type":"A","field":"computerscienze","amount":30},
+			{"type":"A","field":"none","amount":30},
+			{"type":"G","field":"none","amount":30}
+		]
+	}
+}

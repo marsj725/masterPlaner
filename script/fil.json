@@ -1,0 +1,25 @@
+{
+	"name":"MyMasterplan!",
+	"masterprogram":"Secure Systems",
+	"plans":
+	[{
+		"id":1,
+		"period":"VT",
+		"year":1,
+		"created":"2014-05-10",
+		"courses":[
+			{"period":1,"course":"tata41","type":"G1","credits":6},
+			{"period":2,"course":"tata42","type":"G2","credits":4}
+		]
+	},{
+		"id":2,
+		"period":"VT",
+		"year":2,
+		"created":"2014-05-14",
+		"courses":[
+			{"period":1,"course":"tata41","type":"G1","credits":6},
+			{"period":2,"course":"tata42","type":"A","credits":6},
+			{"period":2,"course":"tata24","type":"A","credits":8}
+		]
+	}]
+}

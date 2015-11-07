@@ -1,0 +1,28 @@
+<header>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>{{title}}</h1>
+		</div>
+	</div>
+	<div ng-repeat="info in $parent.information" class="alert alert-info" role="alert">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				<span class="sr-only">Error:</span>
+				{{info.courseCode}}
+				<p class="pull-right">
+					<a ng-class="{'btn':true,'btn-info':true}" ng-click="removeInfo(info)">Close <span class="glyphicon glyphicon-remove"></a>&nbsp;
+				</p>
+	
+	</div>
+	<div ng-repeat="fail in $parent.errors | filter:{hidden:false}" class="alert alert-{{fail.type}}" role="alert">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				<span class="sr-only">Error:</span>
+				{{fail.message}}
+				<p class="pull-right">
+					<a ng-class="{'btn':true,'btn-warning':fail.type=='warning','btn-danger':fail.type=='danger','btn-success':fail.type=='success'}" ng-click="hideWarning(fail)">Hide</a>
+					<a ng-class="{'btn':true,'btn-warning':fail.type=='warning','btn-danger':fail.type=='danger','btn-success':fail.type=='success'}" ng-click="removeWarning(fail)">Close <span class="glyphicon glyphicon-remove"></a>&nbsp;
+				</p>
+	
+	</div>
+	<div class="separator">
+	</div>
+</header>

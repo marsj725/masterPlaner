@@ -1,0 +1,6 @@
+<div ng-include src="'static/templates/menu.html'"></div>
+<div ng-include src="'static/templates/information.html'"></div>
+<div class="container">
+	<button ng-show="ver==false" ng-click="authenticate('facebook')">Sign in with Facebook</button>
+	<button ng-show="ver==true" ng-click="logout()">Sign out</button>
+</div>
